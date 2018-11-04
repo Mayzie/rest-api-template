@@ -1,0 +1,21 @@
+# Activate by: systemctl enable --now api@{1..4}
+# Above launches 4 processes.
+[Unit]
+Description=REST API %i  # Change
+After=multi-user.target
+
+[Service]
+WorkingDirectory=/home/api/api  # Change to project directory.
+# Change user details
+User=api
+Group=api
+Restart=always
+# Change database credentials
+Environment=DATABASE_HOST=localhost
+Environment=DATABASE_PORT=5432
+Environment=DATABASE_USER=postgres
+Environment=DATABASE_PASS=
+Environment=DATABASE_NAME=development
+# Activate server on ports 10000+
+Environment=PORT=1000%i
+ExecStart=/usr/local/bin/pipenv run /home/api/api/main.py  # Change to project directory.
