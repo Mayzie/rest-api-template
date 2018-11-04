@@ -1,6 +1,6 @@
 # RESTful API Template
 
-Base project used to get started with creating RESTful APIs in asyncio Python.
+Base project used to get started with creating RESTful APIs in asyncio Python by me, Mayzie! :-D
 
 ## Requirements:
  * Python >=3.5,
